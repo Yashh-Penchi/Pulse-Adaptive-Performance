@@ -1,0 +1,8 @@
+{
+	"key.pulse.open_hud": "Open Pulse HUD",
+	"key.category.pulse.main": "Pulse Adaptive Performance",
+
+	"text.autoconfig.pulse.title": "Pulse Adaptive Performance",
+	"text.autoconfig.pulse.option.enabled": "Enabled",
+	"text.autoconfig.pulse.option.enabled.tooltip": "Master toggle for Pulse. No performance behaviour is implemented yet."
+}

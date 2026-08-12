@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "pulse",
+	"version": "${version}",
+	"name": "Pulse Adaptive Performance",
+	"description": "A client-side adaptive performance foundation for Minecraft.",
+	"authors": [
+		"YashHLabs"
+	],
+	"contact": {},
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.yashhlabs.pulse.PulseClient"
+		],
+		"modmenu": [
+			"net.yashhlabs.pulse.config.PulseModMenuIntegration"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.0",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"cloth-config2": "*",
+		"modmenu": "*"
+	}
+}
