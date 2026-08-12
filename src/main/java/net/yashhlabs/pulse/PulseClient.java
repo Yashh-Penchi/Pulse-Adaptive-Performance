@@ -4,7 +4,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderEvents;
 import net.yashhlabs.pulse.adaptive.AdaptiveController;
 import net.yashhlabs.pulse.adaptive.PerformanceMonitor;
 import net.yashhlabs.pulse.config.PulseConfig;
@@ -24,7 +24,7 @@ public class PulseClient implements ClientModInitializer {
 		MONITOR = new PerformanceMonitor();
 		CONTROLLER = new AdaptiveController(MONITOR);
 
-		WorldRenderEvents.END.register(context -> {
+		LevelRenderEvents.END_MAIN.register(context -> {
 			PulseConfig config = AutoConfig.getConfigHolder(PulseConfig.class).getConfig();
 			MONITOR.setWindowMillis(config.rollingWindowMs);
 			MONITOR.onFrame();
