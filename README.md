@@ -25,11 +25,17 @@ Pulse watches your FPS in real-time and automatically adjusts settings like rend
 ### Project Structure
 
 net.yashhlabs.pulse
+
 ├── PulseClient.java
+
 ├── config/
+
 ├── adaptive/      ← coming soon
+
 ├── hud/           ← coming soon
+
 ├── keybind/
+
 └── util/
 
 ---
