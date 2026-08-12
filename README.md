@@ -49,7 +49,7 @@ net.yashhlabs.pulse
 - [x] Project setup
 - [x] Config system
 - [x] Mod Menu support
-- [ ] Adaptive system
+- [x] Adaptive system
 - [ ] Settings application
 - [ ] HUD
 
