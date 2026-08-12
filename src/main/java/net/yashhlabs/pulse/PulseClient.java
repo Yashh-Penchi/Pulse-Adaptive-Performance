@@ -3,22 +3,38 @@ package net.yashhlabs.pulse;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.yashhlabs.pulse.adaptive.AdaptiveController;
+import net.yashhlabs.pulse.adaptive.PerformanceMonitor;
 import net.yashhlabs.pulse.config.PulseConfig;
 import net.yashhlabs.pulse.keybind.PulseKeybinds;
 import net.yashhlabs.pulse.util.PulseLogger;
 
-/**
- * Client entrypoint for Pulse Adaptive Performance.
- * This is a foundation build: it wires up config, keybindings, and
- * logging only — no adaptive/performance logic lives here yet.
- */
 public class PulseClient implements ClientModInitializer {
+
+	public static PerformanceMonitor MONITOR;
+	public static AdaptiveController CONTROLLER;
 
 	@Override
 	public void onInitializeClient() {
 		AutoConfig.register(PulseConfig.class, GsonConfigSerializer::new);
 		PulseKeybinds.register();
 
-		PulseLogger.info("Pulse Adaptive Performance initialized (foundation build, no performance features active).");
+		MONITOR = new PerformanceMonitor();
+		CONTROLLER = new AdaptiveController(MONITOR);
+
+		WorldRenderEvents.END.register(context -> {
+			PulseConfig config = AutoConfig.getConfigHolder(PulseConfig.class).getConfig();
+			MONITOR.setWindowMillis(config.rollingWindowMs);
+			MONITOR.onFrame();
+		});
+
+		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			PulseConfig config = AutoConfig.getConfigHolder(PulseConfig.class).getConfig();
+			CONTROLLER.tick(config);
+		});
+
+		PulseLogger.info("Pulse Adaptive Performance initialized. Monitoring only, nothing applied yet.");
 	}
 }

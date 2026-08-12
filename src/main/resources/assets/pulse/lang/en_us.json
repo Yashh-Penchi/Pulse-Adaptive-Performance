@@ -3,6 +3,72 @@
 	"key.category.pulse.main": "Pulse Adaptive Performance",
 
 	"text.autoconfig.pulse.title": "Pulse Adaptive Performance",
-	"text.autoconfig.pulse.option.enabled": "Enabled",
-	"text.autoconfig.pulse.option.enabled.tooltip": "Master toggle for Pulse. No performance behaviour is implemented yet."
+
+	"text.autoconfig.pulse.category.general": "General",
+	"text.autoconfig.pulse.category.adaptive": "Adaptive Settings",
+	"text.autoconfig.pulse.category.thresholds": "Stage Thresholds",
+	"text.autoconfig.pulse.category.advanced": "Advanced",
+
+	"text.autoconfig.pulse.option.enabled": "Enable Pulse",
+	"text.autoconfig.pulse.option.enabled.tooltip": "Master switch. Turns off all monitoring and adaptation when disabled.",
+
+	"text.autoconfig.pulse.option.targetFps": "Target FPS",
+	"text.autoconfig.pulse.option.targetFps.tooltip": "The frame rate Pulse tries to keep you near. Stage decisions are based on how far your real FPS is from this.",
+
+	"text.autoconfig.pulse.option.logStageChanges": "Log Stage Changes",
+	"text.autoconfig.pulse.option.logStageChanges.tooltip": "Print a line to the log whenever the adaptive stage changes. Useful for tuning thresholds.",
+
+	"text.autoconfig.pulse.option.adaptiveEnabled": "Enable Adaptive System",
+	"text.autoconfig.pulse.option.adaptiveEnabled.tooltip": "Lets Pulse change stages automatically based on FPS. Turn off to stay locked at Optimal.",
+
+	"text.autoconfig.pulse.option.cooldownSeconds": "Transition Cooldown (seconds)",
+	"text.autoconfig.pulse.option.cooldownSeconds.tooltip": "Minimum time between stage changes. Higher values stop the system from flickering between stages.",
+
+	"text.autoconfig.pulse.option.minRenderDistance": "Minimum Render Distance",
+	"text.autoconfig.pulse.option.minRenderDistance.tooltip": "Render distance used at the Aggressive stage, in chunks.",
+
+	"text.autoconfig.pulse.option.maxRenderDistance": "Maximum Render Distance",
+	"text.autoconfig.pulse.option.maxRenderDistance.tooltip": "Render distance used at the Optimal stage, in chunks.",
+
+	"text.autoconfig.pulse.option.minSimulationDistance": "Minimum Simulation Distance",
+	"text.autoconfig.pulse.option.minSimulationDistance.tooltip": "Simulation distance used at the Aggressive stage, in chunks.",
+
+	"text.autoconfig.pulse.option.maxSimulationDistance": "Maximum Simulation Distance",
+	"text.autoconfig.pulse.option.maxSimulationDistance.tooltip": "Simulation distance used at the Optimal stage, in chunks.",
+
+	"text.autoconfig.pulse.option.lightThresholdPercent": "Light Stage Threshold",
+	"text.autoconfig.pulse.option.lightThresholdPercent.tooltip": "Enter the Light stage once FPS drops below this percentage of your target FPS.",
+
+	"text.autoconfig.pulse.option.moderateThresholdPercent": "Moderate Stage Threshold",
+	"text.autoconfig.pulse.option.moderateThresholdPercent.tooltip": "Enter the Moderate stage once FPS drops below this percentage of your target FPS.",
+
+	"text.autoconfig.pulse.option.aggressiveThresholdPercent": "Aggressive Stage Threshold",
+	"text.autoconfig.pulse.option.aggressiveThresholdPercent.tooltip": "Enter the Aggressive stage once FPS drops below this percentage of your target FPS.",
+
+	"text.autoconfig.pulse.option.recoveryThresholdPercent": "Recovery Threshold",
+	"text.autoconfig.pulse.option.recoveryThresholdPercent.tooltip": "FPS must climb back above this percentage of target before Pulse eases off to a lighter stage. Stops rapid flickering.",
+
+	"text.autoconfig.pulse.option.forcedStage": "Force Stage",
+	"text.autoconfig.pulse.option.forcedStage.tooltip": "Lock Pulse to a specific stage for testing. Set to Auto for normal behaviour.",
+
+	"text.autoconfig.pulse.option.rollingWindowMs": "FPS Averaging Window (ms)",
+	"text.autoconfig.pulse.option.rollingWindowMs.tooltip": "How far back Pulse looks when averaging FPS and frame time. Shorter reacts faster, longer is smoother.",
+
+	"text.autoconfig.pulse.option.lightParticleMultiplierPercent": "Light Stage Particle Limit",
+	"text.autoconfig.pulse.option.lightParticleMultiplierPercent.tooltip": "Percentage of normal particle limits to allow at the Light stage. Not applied yet.",
+
+	"text.autoconfig.pulse.option.moderateParticleMultiplierPercent": "Moderate Stage Particle Limit",
+	"text.autoconfig.pulse.option.moderateParticleMultiplierPercent.tooltip": "Percentage of normal particle limits to allow at the Moderate stage. Not applied yet.",
+
+	"text.autoconfig.pulse.option.aggressiveParticleMultiplierPercent": "Aggressive Stage Particle Limit",
+	"text.autoconfig.pulse.option.aggressiveParticleMultiplierPercent.tooltip": "Percentage of normal particle limits to allow at the Aggressive stage. Not applied yet.",
+
+	"text.autoconfig.pulse.option.lightEntityDistancePercent": "Light Stage Entity Distance",
+	"text.autoconfig.pulse.option.lightEntityDistancePercent.tooltip": "Percentage of normal entity render distance to allow at the Light stage. Not applied yet.",
+
+	"text.autoconfig.pulse.option.moderateEntityDistancePercent": "Moderate Stage Entity Distance",
+	"text.autoconfig.pulse.option.moderateEntityDistancePercent.tooltip": "Percentage of normal entity render distance to allow at the Moderate stage. Not applied yet.",
+
+	"text.autoconfig.pulse.option.aggressiveEntityDistancePercent": "Aggressive Stage Entity Distance",
+	"text.autoconfig.pulse.option.aggressiveEntityDistancePercent.tooltip": "Percentage of normal entity render distance to allow at the Aggressive stage. Not applied yet."
 }
