@@ -1,6 +1,6 @@
 package net.yashhlabs.pulse.adaptive;
 
-// stage order matters, used for comparisons
+// order matters here
 public enum AdaptiveStage {
 	OPTIMAL,
 	LIGHT,

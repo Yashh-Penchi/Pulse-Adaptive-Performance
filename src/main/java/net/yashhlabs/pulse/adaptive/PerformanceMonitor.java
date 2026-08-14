@@ -13,7 +13,7 @@ import java.util.Map;
 
 public final class PerformanceMonitor {
 
-	// only recheck entity/particle count every few frames
+	// throttle world sampling
 	private static final int WORLD_SAMPLE_INTERVAL = 10;
 
 	private final Deque<Long> frameTimestamps = new ArrayDeque<>();
@@ -73,7 +73,7 @@ public final class PerformanceMonitor {
 		particleCount = readParticleCount(client.particleManager);
 	}
 
-	// no public api for this, reads the internal particle map
+	// best effort only
 	private int readParticleCount(ParticleManager manager) {
 		if (manager == null) {
 			return 0;
@@ -113,7 +113,7 @@ public final class PerformanceMonitor {
 			particleMapField = field;
 			return;
 		} catch (NoSuchFieldException ignored) {
-			// name changed, fall back below
+			// name changed maybe
 		}
 
 		for (Field field : manager.getClass().getDeclaredFields()) {

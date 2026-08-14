@@ -1,6 +1,6 @@
 package net.yashhlabs.pulse.adaptive;
 
-// desired values, nothing applies these yet
+// not applied yet
 public record StageSettings(
 		int renderDistance,
 		int simulationDistance,

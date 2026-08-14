@@ -53,7 +53,7 @@ public class PulseConfig implements ConfigData {
 	@ConfigEntry.BoundedDiscrete(max = 32, min = 2)
 	public int maxSimulationDistance = 12;
 
-	// stage thresholds, percent of target fps
+	// stage thresholds
 
 	@ConfigEntry.Category("thresholds")
 	@ConfigEntry.Gui.Tooltip

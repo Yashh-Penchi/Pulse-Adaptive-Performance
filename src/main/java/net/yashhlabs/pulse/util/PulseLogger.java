@@ -3,10 +3,7 @@ package net.yashhlabs.pulse.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Thin wrapper around the mod's SLF4J logger so every class logs
- * under the same "Pulse" tag instead of importing SLF4J everywhere.
- */
+// shared logger tag
 public final class PulseLogger {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger("Pulse");

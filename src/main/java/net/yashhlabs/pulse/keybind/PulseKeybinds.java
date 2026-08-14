@@ -6,10 +6,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
-/**
- * Registers Pulse's key bindings. No keybind currently does anything —
- * this is just the registration point future features will hook into.
- */
+// unbound for now
 public final class PulseKeybinds {
 
 	private static final KeyBinding.Category CATEGORY =

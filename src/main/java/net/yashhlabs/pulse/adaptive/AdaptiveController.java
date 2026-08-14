@@ -4,7 +4,7 @@ import net.yashhlabs.pulse.config.ForcedStage;
 import net.yashhlabs.pulse.config.PulseConfig;
 import net.yashhlabs.pulse.util.PulseLogger;
 
-// picks a stage and stores desired values, nothing gets applied yet
+// nothing applied yet
 public final class AdaptiveController {
 
 	private final PerformanceMonitor monitor;
@@ -56,7 +56,7 @@ public final class AdaptiveController {
 			rawTarget = AdaptiveStage.OPTIMAL;
 		}
 
-		// need a real recovery before easing off, not a single good frame
+		// need real recovery first
 		boolean easingUp = rawTarget.ordinal() < currentStage.ordinal();
 		if (easingUp && ratio < config.recoveryThresholdPercent / 100.0) {
 			return currentStage;
